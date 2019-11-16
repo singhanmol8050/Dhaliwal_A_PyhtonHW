@@ -18,9 +18,7 @@ while gameVars.player is False:
 
 	if player.lower() == "quit": 
 		exit()
-	elif gameVars.computer == player:
-		print("tie! no one wins, play again")
-
+	
 	elif player.lower() == "odd":
 		if gameVars.computer == "2":
 			print("You lose!", gameVars.computer, "is not", player, "\n")

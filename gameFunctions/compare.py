@@ -11,6 +11,7 @@ def comparechoices():
 			print("You lose!", gameVars.computer, "is not", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
+			if gameVars.computer == "2":
 			print("You win!", player, "is", gameVars.computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1
 
@@ -19,6 +20,7 @@ def comparechoices():
 			print("You lose!", gameVars.computer, "is not", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
+			if gameVars.computer == "1":
 			print("You win!", player, "is", computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1
 

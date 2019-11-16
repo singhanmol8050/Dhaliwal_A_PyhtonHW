@@ -6,22 +6,31 @@ from gameFunctions import gameVars
 def comparechoices():
 	if player == "quit":
 		exit()
-	elif player == "even":
-		if gameVars.computer == "1":
-			print("You lose!", gameVars.computer, "is not", player, "\n")
+	elif gameVars.computer == player:
+		print("tie! no one wins, play again")
+
+	elif player == "rock":
+		if gameVars.computer == "paper":
+			print("You lose!", gameVars.computer, "covers", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
-			if gameVars.computer == "2":
-			print("You win!", player, "is", gameVars.computer, "\n")
+			print("You win!", player, "smashes", gameVars.computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1
 
-	elif player == "odd":
-		if gameVars.computer == "2":
-			print("You lose!", gameVars.computer, "is not", player, "\n")
+	elif player == "paper":
+		if gameVars.computer == "scissors":
+			print("You lose!", gameVars.computer, "cuts", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
-			if gameVars.computer == "1":
-			print("You win!", player, "is", computer, "\n")
+			print("You win!", player, "covers", computer, "\n")
+			gameVars.computer_lives = gameVars.computer_lives - 1
+
+	elif player == "scissors":
+		if computer == "rock":
+			print("You lose!", computer, "smashes", player, "\n")
+			gameVars.player_lives = gameVars.player_lives - 1
+		else:
+			print("You win!", player, "cuts", computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1
 
 	else:

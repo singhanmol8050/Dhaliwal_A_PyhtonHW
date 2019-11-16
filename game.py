@@ -10,7 +10,7 @@ while gameVars.player is False:
 	print("Choose your weapon!\n")
 	print("**********************************")
 
-	player = input("choose odd or even: ")
+	player = input("choose rock, paper or scissors: ")
 	player = player.lower()
 
 	print("computer chose ", gameVars.computer, "\n")
@@ -18,24 +18,32 @@ while gameVars.player is False:
 
 	if player.lower() == "quit": 
 		exit()
-	
-	elif player.lower() == "odd":
-		if gameVars.computer == "2":
-			print("You lose!", gameVars.computer, "is not", player, "\n")
+	elif gameVars.computer == player:
+		print("tie! no one wins, play again")
+
+	elif player.lower() == "rock":
+		if gameVars.computer == "paper":
+			print("You lose!", gameVars.computer, "covers", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
-			if gameVars.computer == "1":
-			print("You win!", player, "is", gameVars.computer, "\n")
+			print("You win!", player, "smashes", gameVars.computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1 
 
-	elif player.lower() == "even":
-		if gameVars.computer == "1":
-			print("You lose!", gameVars.computer, "is not", player, "\n")
+	elif player.lower() == "paper":
+		if gameVars.computer == "scissors":
+			print("You lose!", gameVars.computer, "cuts", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
-			if gameVars.computer == "2":
-			print("You win!", player, "is", gameVars.computer, "\n")
+			print("You win!", player, "covers", gameVars.computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1 
+
+	elif player.lower() == "scissors":
+		if gameVars.computer == "rock":
+			print("You lose!", gameVars.computer, "smashes", player, "\n")
+			gameVars.player_lives = gameVars.player_lives - 1
+		else:
+			print("You win!", player, "cuts", gameVars.computer, "\n")
+			gameVars.computer_lives = gameVars.computer_lives - 1
 
 	else:
 		print("That's not a valid choice, try again")

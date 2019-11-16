@@ -23,18 +23,18 @@ while gameVars.player is False:
 
 	elif player.lower() == "odd":
 		if gameVars.computer == "2":
-			print("You lose!", gameVars.computer, "2 is not odd", player, "\n")
+			print("You lose!", gameVars.computer, "is not", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
-			print("You win!", player, "2 is odd", gameVars.computer, "\n")
+			print("You win!", player, "is", gameVars.computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1 
 
 	elif player.lower() == "even":
 		if gameVars.computer == "1":
-			print("You lose!", gameVars.computer, "1 is not odd", player, "\n")
+			print("You lose!", gameVars.computer, "is not", player, "\n")
 			gameVars.player_lives = gameVars.player_lives - 1
 		else:
-			print("You win!", player, "1 is odd", gameVars.computer, "\n")
+			print("You win!", player, "is", gameVars.computer, "\n")
 			gameVars.computer_lives = gameVars.computer_lives - 1 
 
 	else:
